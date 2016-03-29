@@ -1,6 +1,6 @@
 DROP TABLE  tblItemCostHistory,
             TblShipLine,
-            tblItemReview,
+            tblReview,
             TblItemLocation,
             tblOrderLine,
             TblOrder,
@@ -95,14 +95,14 @@ CREATE TABLE tblItemCostHistory(
   CONSTRAINT fktblItem4        FOREIGN KEY (ItemID)  REFERENCES tblItem(ItemID),
 );
 
-CREATE TABLE tblItemReview(
+CREATE TABLE tblReview(
   ReviewID    int         NOT NULL,
   ReviewDate  datetime ,
   Rating      int         CHECK (Rating in (1,2,3,4,5)),
   ReviewText  varchar(500),
   OrderID     char(6)     NOT NULL,
   ItemID      char(6)     NOT NULL,
-  CONSTRAINT pktblItemReview     PRIMARY KEY (ReviewID),
+  CONSTRAINT pktblReview     PRIMARY KEY (ReviewID),
   CONSTRAINT fktblOrderLine      FOREIGN KEY (OrderID, ItemID)
                                  REFERENCES tblOrderLine(OrderID, ItemID)
 );
@@ -111,7 +111,7 @@ SELECT * FROM	TblCustomer "Customer";
 SELECT * FROM	tblItem "Item";
 SELECT * FROM	tblItemCostHistory "Item Cost History";
 SELECT * FROM	TblItemLocation "Item Location";
-SELECT * FROM	tblItemReview "Item Review";
+SELECT * FROM	tblReview "Item Review";
 SELECT * FROM	tblItemType "Item Type";
 SELECT * FROM	TblOrder "Order";
 SELECT * FROM	tblOrderLine "Order Line";
