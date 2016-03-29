@@ -170,11 +170,11 @@ INSERT INTO tblShipLine VALUES('3/5/2016','651222','A34882','10','10','FedEX')
 INSERT INTO tblShipLine VALUES('3/6/2016','651222','B78244','20','21','ups')
 INSERT INTO tblShipLine VALUES('3/19/2016','651222','A34882','10','1','UPS')
 
-INSERT INTO tblItemReview  VALUES('000000','2/12/16','1','This is the worst company I''ve ever dealt with. They still have not shipped my order and it was placed on January 26. I will never buy anything from them again. Ever.','200335','A34665');
-INSERT INTO tblItemReview  VALUES('000001','2/14/16','1','I don''t know how this company stays in business. They can''t ship anything on time, and their game selection isn''t all that great','450137','C34122');
-INSERT INTO tblItemReview  VALUES('000002','2/18/16','5','Shipping was fast, the game was in great shape, and I will order from them again. Highly recommend','300221','A23771');
-INSERT INTO tblItemReview  VALUES('000003','2/16/16','4','This is one of the few companies that will ship internationally fairly cost effectively. They are slow, but at least shipping isn''t a ridiculous amount.','223344','A23771');
-INSERT INTO tblItemReview  VALUES('000004','1/15/16','3','They are slow. They overship. They undership. They have the best shipping internationally, but nothing spectacular if you are shipping to the U.S. Buyer beware.','445511','C34122');
+INSERT INTO tblReview  VALUES('000000','2/12/16','1','This is the worst company I''ve ever dealt with. They still have not shipped my order and it was placed on January 26. I will never buy anything from them again. Ever.','200335','A34665');
+INSERT INTO tblReview  VALUES('000001','2/14/16','1','I don''t know how this company stays in business. They can''t ship anything on time, and their game selection isn''t all that great','450137','C34122');
+INSERT INTO tblReview  VALUES('000002','2/18/16','5','Shipping was fast, the game was in great shape, and I will order from them again. Highly recommend','300221','A23771');
+INSERT INTO tblReview  VALUES('000003','2/16/16','4','This is one of the few companies that will ship internationally fairly cost effectively. They are slow, but at least shipping isn''t a ridiculous amount.','223344','A23771');
+INSERT INTO tblReview  VALUES('000004','1/15/16','3','They are slow. They overship. They undership. They have the best shipping internationally, but nothing spectacular if you are shipping to the U.S. Buyer beware.','445511','C34122');
 
 INSERT INTO tblItemCostHistory VALUES('A23441','1/6/13','10.25');
 INSERT INTO tblItemCostHistory VALUES('A23441','5/12/13','10.5');
