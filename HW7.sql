@@ -128,7 +128,7 @@ INNER JOIN TblCustomer cst
 ON         ord.CustomerID = cst.CustomerID
 INNER JOIN TblOrderLine ordl
 ON         ordl.orderid = ord.orderid
-LEFT OUTER JOIN tblItem item
+INNER JOIN tblItem item
 ON ordl.itemid = item.itemid
 WHERE     YEAR(OrderDate) = YEAR(getdate()) AND MONTH(OrderDate) = 1
 ORDER BY OrderDate DESC;
@@ -174,9 +174,9 @@ INNER JOIN TblCustomer cst
 ON         ord.CustomerID = cst.CustomerID
 INNER JOIN TblOrderLine ordl
 ON         ordl.orderid = ord.orderid
-LEFT OUTER JOIN tblItem item
+INNER JOIN tblItem item
 ON ordl.itemid = item.itemid
-LEFT OUTEr JOIN tblitemtype itp
+INNER JOIN tblitemtype itp
 ON item.typeid = itp.typeid
 WHERE     YEAR(OrderDate) = YEAR(getdate()) AND MONTH(OrderDate) = 1
 ORDER BY OrderDate DESC;
@@ -289,7 +289,7 @@ SELECT    ordl.OrderID OrderID,
           ISNULL(SUM(tsl.QtyShipped),0) TotalQuantityShipped,
           ordl.quantity - ISNULL(SUM(tsl.QtyShipped),0) LeftToShip
 FROM      TblOrderLine ordl
-LEFT OUTER JOIN TblShipLine tsl
+INNER JOIN TblShipLine tsl
 ON ordl.orderid = tsl.orderid AND ordl.itemid = tsl.itemid
 GROUP BY ordl.orderid, ordl.itemid, ordl.price, ordl.quantity
 ORDER BY ordl.orderid;
@@ -303,7 +303,7 @@ SELECT    ordl.OrderID OrderID,
           ISNULL(SUM(tsl.QtyShipped),0) TotalQuantityShipped,
           ordl.quantity - ISNULL(SUM(tsl.QtyShipped),0) LeftToShip
 FROM      TblOrderLine ordl
-LEFT OUTER JOIN TblShipLine tsl
+INNER JOIN TblShipLine tsl
 ON ordl.orderid = tsl.orderid AND ordl.itemid = tsl.itemid
 LEFT OUTER JOIN TblOrder ord
 ON ordl.orderid = ord.orderid
@@ -324,7 +324,7 @@ SELECT    ordl.OrderID OrderID,
           ISNULL(SUM(tsl.QtyShipped),0) TotalQuantityShipped,
           ordl.quantity - ISNULL(SUM(tsl.QtyShipped),0) LeftToShip
 FROM      TblOrderLine ordl
-LEFT OUTER JOIN TblShipLine tsl
+INNER JOIN TblShipLine tsl
 ON ordl.orderid = tsl.orderid AND ordl.itemid = tsl.itemid
 LEFT OUTER JOIN TblOrder ord
 ON ordl.orderid = ord.orderid
@@ -351,7 +351,7 @@ SELECT    ordl.OrderID OrderID,
           ISNULL(SUM(tsl.QtyShipped),0) TotalQuantityShipped,
           ordl.quantity - ISNULL(SUM(tsl.QtyShipped),0) LeftToShip
 FROM      TblOrderLine ordl
-LEFT OUTER JOIN TblShipLine tsl
+INNER JOIN TblShipLine tsl
 ON ordl.orderid = tsl.orderid AND ordl.itemid = tsl.itemid
 LEFT OUTER JOIN TblOrder ord
 ON ordl.orderid = ord.orderid
@@ -375,10 +375,10 @@ SELECT    cst.lastname + ', ' + cst.firstname CustomerName,
 FROM      TblOrderLine ordl
 INNER JOIN TblShipLine tsl
 ON ordl.orderid = tsl.orderid AND ordl.itemid = tsl.itemid AND UPPER(tsl.methodshipped) = 'FEDEX'
-LEFT OUTER JOIN TblOrder ord
+INNER JOIN TblOrder ord
 ON ordl.orderid = ord.orderid
-LEFT OUTER JOIN TblCustomer cst
+INNER JOIN TblCustomer cst
 ON ord.customerid = cst.customerid
-LEFT OUTER JOIN tblItem item
+INNER JOIN tblItem item
 ON ordl.itemid = item.itemid
 ORDER BY CustomerName;
