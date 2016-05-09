@@ -28,8 +28,8 @@ CREATE TABLE Toy(
 
 CREATE TABLE Customer(
   CustomerID   char(10)  NOT NULL,
-  FirstName char(30)  NOT NULL,
-  LastName char(30)  NOT NULL,
+  FirstName varchar(30)  NOT NULL,
+  LastName varchar(30)  NOT NULL,
   CONSTRAINT pkCustomer PRIMARY KEY (CustomerID),
 );
 
